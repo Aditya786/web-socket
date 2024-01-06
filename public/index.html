@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Page Title</title>
+  </head>
+  <body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      const sendMessage = () => {
+        socket.emit("chat-msg", "How are you");
+      };
+      socket.on("chat-msg", (msg) => console.log("item recieved" + msg));
+    </script>
+
+    <h1>Hello, World!</h1>
+    <p>This is a simple HTML document.</p>
+    <button onclick="sendMessage()">Click me</button>
+  </body>
+</html>
